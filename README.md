@@ -1,1 +1,2 @@
 # BEM_exempel
+Här finner ni en html-fil där jag först visar på några exempel på BEM som är felaktiga, och så jag såg hos flera av er under era presentationer. Om ni vill klara VG så får er BEM inte se ut som dessa felaktiga exempel. Därefter följer ett par exempel på hur korrekt BEM skall se ut :)
