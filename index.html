@@ -1,94 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEM exempel</title>
-</head>
-<body>
-    <!-- FEL -->
-    <!-- Detta är inte korrekt BEM eftersom jag i mitt klassnamn på rad
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BEM exempel</title>
+    </head>
+    <body>
+        <p>Hejsan</p>
+
+        <!-- FEL -->
+        <!-- Detta är inte korrekt BEM eftersom jag i mitt klassnamn på rad
           15 indikerar att detta element ingår i ett block med klassen 
           .header vilket vi kan se inte är fallet. Använder vi dubbla understreck
           så säger vi att detta är ett element, och då behöver ordet före understrecken 
           består av hela blocknamnet -->
-    <header class="header__container">
-        <nav class="header__menu">
-            <a href="" class="header__link"></a>
-            <a href="" class="header__link"></a>
-            <a href="" class="header__link"></a>
-            <a href="" class="header__link"></a>
-        </nav>
-    </header>
+        <header class="header__container">
+            <nav class="header__menu">
+                <a href="" class="header__link"></a>
+                <a href="" class="header__link"></a>
+                <a href="" class="header__link"></a>
+                <a href="" class="header__link"></a>
+            </nav>
+        </header>
 
-    <!-- FEL -->
-    <!-- Detta är fel eftersom jag här säger att alla mina element ingår i ett block
+        <!-- FEL -->
+        <!-- Detta är fel eftersom jag här säger att alla mina element ingår i ett block
          som skapas av dess förälder. I strukturen nedan bör endast header vara mitt 
          block, och då skall mina a-taggar ha klassen .header__link -->
-    <header class="header">
-        <nav class="header__nav">
-            <a href="" class="header__nav__link"></a>
-            <a href="" class="header__nav__link"></a>
-            <a href="" class="header__nav__link"></a>
-            <a href="" class="header__nav__link"></a>
-        </nav>
-    </header>
+        <header class="header">
+            <nav class="header__nav">
+                <a href="" class="header__nav__link"></a>
+                <a href="" class="header__nav__link"></a>
+                <a href="" class="header__nav__link"></a>
+                <a href="" class="header__nav__link"></a>
+            </nav>
+        </header>
 
-    <!-- FEL -->
-    <!-- Detta är fel eftersom jag satt en modifier på min header utan att ha med orginalklassen.
+        <!-- FEL -->
+        <!-- Detta är fel eftersom jag satt en modifier på min header utan att ha med orginalklassen.
          Modifiers använder vi för att göra en justering på en klass som redan har styling, för att slippa 
          skriva samma kod flera gånger. Därför behöver en klass med en modifier ALLTID ha både sin 
          orginalklass samt sin modifier -->
-    <header class="header--dark">
-        <nav class="header__menu">
-            <a href="" class="header__link"></a>
-            <a href="" class="header__link"></a>
-            <a href="" class="header__link"></a>
-            <a href="" class="header__link"></a>
-        </nav>
-    </header>
+        <header class="header--dark">
+            <nav class="header__menu">
+                <a href="" class="header__link"></a>
+                <a href="" class="header__link"></a>
+                <a href="" class="header__link"></a>
+                <a href="" class="header__link"></a>
+            </nav>
+        </header>
 
-    <!-- RÄTT -->
-    <!-- Här har jag skapat blocket header och låter ALLA element som ligger i min header
+        <!-- RÄTT -->
+        <!-- Här har jag skapat blocket header och låter ALLA element som ligger i min header
          ärva blocknamnet, ända ner till mina länkar i menyn, så att man vet till vilket 
          block ALLA mina element hör -->
-    <header class="header">
-        <nav class="header__nav">
-            <ul class="header__menu">
-                <li class="header__list-item">
-                    <a href="" class="header__link"></a>
-                </li>
-                <li class="header__list-item">
-                    <a href="" class="header__link"></a>
-                </li>
-                <li class="header__list-item">
-                    <a href="" class="header__link"></a>
-                </li>
-                <li class="header__list-item">
-                    <a href="" class="header__link"></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+        <header class="header">
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li class="header__list-item">
+                        <a href="" class="header__link"></a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="" class="header__link"></a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="" class="header__link"></a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="" class="header__link"></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <!-- RÄTT -->
-    <!-- Här har jag blocket header samt elementet header__page-title, sen
+        <!-- RÄTT -->
+        <!-- Här har jag blocket header samt elementet header__page-title, sen
          väljer jag att göra min meny till ett eget block med namnet menu
          och dess element ärver blocknamnet och heter menu__link -->
-    <header class="header">
-        <h1 class="header__page-title"></h1>
-        <nav class="menu">
-            <a href="" class="menu__link"></a>
-            <a href="" class="menu__link"></a>
-            <a href="" class="menu__link"></a>
-            <a href="" class="menu__link"></a>
-        </nav>
-    </header>
+        <header class="header">
+            <h1 class="header__page-title"></h1>
+            <nav class="menu">
+                <a href="" class="menu__link"></a>
+                <a href="" class="menu__link"></a>
+                <a href="" class="menu__link"></a>
+                <a href="" class="menu__link"></a>
+            </nav>
+        </header>
 
-    <!-- RÄTT -->
-    <!-- Detta är rätt eftersom jag nu använder mig utav både min orginalklass och min modifierklass 
+        <!-- RÄTT -->
+        <!-- Detta är rätt eftersom jag nu använder mig utav både min orginalklass och min modifierklass 
          på de element som jag vill skall skilja sig år från orginalklassens styling -->
-         <header class="header header--dark">
+        <header class="header header--dark">
             <nav class="header__menu">
                 <a href="" class="header__link header__link--wider"></a>
                 <a href="" class="header__link"></a>
@@ -96,6 +98,5 @@
                 <a href="" class="header__link"></a>
             </nav>
         </header>
-
-</body>
+    </body>
 </html>
